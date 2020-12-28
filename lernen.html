@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!ATTLIST tag cat CDATA #IMPLIED>
+	<!ATTLIST tag selected CDATA #IMPLIED>
+
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<link href="styles/output.css" type="text/css" rel="stylesheet" />
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+			<script src="js/lernen.js"></script>
+			<script src="js/navigation.js"></script>
+
+			<style>
+				.gradient {
+					background: linear-gradient(90deg, #939492 0%, #6c7597 100%);
+				}
+
+				#menu-toggle:checked+#menu {
+					display: block;
+				}
+			</style>
+		</head>
+
+		<body>
+			<header class="lg:px-16 px-6 bg-blue-500 h-auto md:h-24 flex flex-wrap items-center lg:py-0 py-2">
+
+				<div class="flex items-center flex-shrink-0 text-white mr-6">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-4 h-4 opacity-75">
+						<path
+							d="M3.33 8L10 12l10-6-10-6L0 6h10v2H3.33zM0 8v8l2-2.22V9.2L0 8zm10 12l-5-3-2-1.2v-6l7 4.2 7-4.2v6L10 20z" />
+					</svg>
+					<span class="font-semibold text-2xl tracking-tight m-2">Universität Regensburg</span>
+				</div>
+
+				<label for="menu-toggle" class="pointer-cursor lg:hidden block">
+					<svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+						viewBox="0 0 20 20">
+						<title>menu</title>
+						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+					</svg>
+				</label>
+				<input class="hidden" type="checkbox" id="menu-toggle" />
+
+				<div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+					<div class="text-sm lg:flex-grow ">
+						<a href="#responsive-header"
+							class="block mt-4 w-1/8 pl-6 pr-6 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-4 text-base">
+							<button id="existing_questions_button" class="button_main" type="button"
+								onclick="callIndex()">Studentenapp</button>
+							<a href="#responsive-header"
+								class="block mt-4  w-1/8 pl-6  pr-6 lg:inline-block lg:mt-0 text-teal-100 hover:text-white mr-4 text-base">
+								<button id="new_question_button" class="button_main" type="button"
+									onclick="callLernenPage()">Lernen</button>
+							</a>
+							<a href="#responsive-header"
+								class="block mt-4 w-1/8  pl-6  pr-6 lg:inline-block lg:mt-0 text-teal-100 hover:text-white text-base">
+								<button id="new_category_button" class="button_main" type="button"
+									onclick="callPruefungPage()">Pruefung</button>
+							</a>
+							<a href="#responsive-header"
+								class="block mt-4 w-1/8 pl-6  pr-6 lg:inline-block lg:mt-0 text-teal-100 hover:text-white text-base">
+								<button id="existing_questions_button" class="button_main" type="button"
+									onclick="callStudentsPerformancePage()">Leistungsübersicht</button>
+							</a>
+
+					</div>
+
+				</div>
+
+			</header>
+			<div class="flex-col px-16 pb-10">
+				<div class="container mx-auto">
+					<h2 class="text-2xl font-bold mb-2 pt-10 text-black">
+						Kategorien
+					</h2>
+					<h3 class="text-1xl mb-8 text-black"> Bitte wählen Sie eine Kategorie und Subkategorie aus! </h3>
+				</div>
+				<section class="flex-col container p-1 mx-auto mt-2 rounded shadow-md bg-gray-300 rounded mb-4">
+					<!--<div id = "divLoadingImage" style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/DQTCVWxe4X1cI" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/loop-trump-loading-DQTCVWxe4X1cI"></a></p> -->
+					<!--		<div id = "divLoadingImage" style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/swhRkVYLJDrCE" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/google-icon-loading-swhRkVYLJDrCE"></a></p>>	-->
+					<img id="divLoadingImage" class="mx-auto w-16" src="images/Rolling-1s-200px (1).gif">
+					<ul id="ul_list" class="lernen list-none">
+					</ul>
+				</section>
+				<button class="btn_weiter text-white font-bold py-2 px-4 rounded-full" id="btn_lernen">
+					<a>Start</a>
+				</button>
+			</div>
+			<script>
+				$(document).ready(function () {
+					loadData();
+				});
+			</script>
+		</body>

@@ -1,0 +1,25 @@
+{
+  "name": "p_studapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^1.1.4"
+  },
+  "dependencies": {
+    "chart.js": "^2.9.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laefrost/Studapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/laefrost/Studapp/issues"
+  },
+  "homepage": "https://github.com/laefrost/Studapp#readme"
+}
